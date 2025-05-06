@@ -1,0 +1,13 @@
+.ascii "HELLO WORLD!\n0"
+LDI R2, 0x01
+LDI R0, 0x00
+LDI R1, 0x00
+LOOP:
+    CPI R2, 0x00
+    BEQ END
+    LDIRP R2, (R01)
+    ADDIW R01, 0x0001
+    OUTA R2
+    JMP LOOP
+END:
+    HLT
